@@ -1,7 +1,8 @@
 # Biglietto del treno
-
+- chiedere all'utente il suo nome?
 - chiedere all'utente quanti chilometri vuole percorrere?
 - chiedere all'utente quanti anni ha?
+- conferma con il bottone
 - definire il prezzo del biglietto in base ai chilometri
   - SE l'utente è minorenne applicare sconto di 20%
     - dichiare una variabile ed applicare l'sconto in base all'utente
