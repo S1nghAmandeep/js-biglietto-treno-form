@@ -26,39 +26,49 @@ btnDOMElenment.addEventListener('click', function () {
     const km = parseFloat(chilometerDOMElement.value);
     console.log('chilometri ' + km);
 
-// - definire il prezzo del biglietto in base ai chilometri
+    if (km < 0 || isNaN(km) || km === 0) {
+        // Messaggio di errore
+        alert('il campo km deve essere compilato e deve essere > 0')
 
-    const price = km * 0.21
-    console.log('prezzo base ' + price);
+    } else if (isNaN(nameDOMElement) ) {
 
-    let finalPrice
+        alert('Inserisci Nome e Cognome')
 
-//   - SE l'utente è minorenne applicare sconto di 20%
-    if (discountDOMElement.value == '0') {
-        const miner = (price * (20 / 100));
-        console.log('minorenne ' + miner)
-        finalPrice = price - miner;
-        console.log(finalPrice)
+    } else {
+        // - definire il prezzo del biglietto in base ai chilometri
 
-//   - ALTRIMENTI SE utente è over 65 anni applicare sconto di 40%
-    } else if (discountDOMElement.value == '2') {
-        const overAge = (price * (40 / 100));
-        console.log('over65 ' + overAge)
-        finalPrice = price - overAge;
-        console.log(finalPrice)
+        const price = km * 0.21
+        console.log('prezzo base ' + price);
 
-//   - ALTRIMENTI indicare il prezzo totale
-    } else {  
-        (discountDOMElement.value == '1')
-        finalPrice = price
+        let finalPrice
+
+        //   - SE l'utente è minorenne applicare sconto di 20%
+        if (discountDOMElement.value == '0') {
+            const miner = (price * (20 / 100));
+            console.log('minorenne ' + miner)
+            finalPrice = price - miner;
+            console.log(finalPrice)
+
+            //   - ALTRIMENTI SE utente è over 65 anni applicare sconto di 40%
+        } else if (discountDOMElement.value == '2') {
+            const overAge = (price * (40 / 100));
+            console.log('over65 ' + overAge)
+            finalPrice = price - overAge;
+            console.log(finalPrice)
+
+            //   - ALTRIMENTI indicare il prezzo totale
+        } else {
+            finalPrice = price
+        }
+
+
+        //   - modificare l'innerHTML con il prezzo del biglietto
+        priceDomElement.innerHTML = finalPrice.toFixed(2) + '&euro;'
+
+        document.querySelector('.tagname').innerHTML = nameDOMElement.value
     }
 
 
-
-//   - modificare l'innerHTML con il prezzo del biglietto
-    priceDomElement.innerHTML = finalPrice.toFixed(2) + '&euro;'
-
-document.querySelector('.tagname').innerHTML = nameDOMElement.value 
 
 
 })
