@@ -26,14 +26,9 @@ btnDOMElenment.addEventListener('click', function () {
     const km = parseFloat(chilometerDOMElement.value);
     console.log('chilometri ' + km);
 
-    if (km < 0 || isNaN(km) || km === 0) {
+    if (km < 0 || isNaN(km) || km === 0 ) {
         // Messaggio di errore
-        alert('il campo km deve essere compilato e deve essere > 0')
-
-    } else if (isNaN(nameDOMElement) ) {
-
-        alert('Inserisci Nome e Cognome')
-
+        alert('il campo km deve essere inserito e deve essere > 0')
     } else {
         // - definire il prezzo del biglietto in base ai chilometri
 

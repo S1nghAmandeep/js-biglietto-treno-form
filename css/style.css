@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.app {
+    background-color: rgb(255, 57, 106);
+    height: 100vh;
+    padding: 50px;
+}
+
+.container-my {
+    margin: 0 auto;
+    max-width: 800px;
+}
